@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E240AAD9205837E0000481C9 /* PlaySoundsViewController+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = E240AAD8205837E0000481C9 /* PlaySoundsViewController+Audio.swift */; };
 		E2F001CC2045BB840060A52D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F001CB2045BB840060A52D /* AppDelegate.swift */; };
 		E2F001CE2045BB840060A52D /* RecordSoundsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2F001CD2045BB840060A52D /* RecordSoundsViewController.swift */; };
 		E2F001D12045BB840060A52D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2F001CF2045BB840060A52D /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E240AAD8205837E0000481C9 /* PlaySoundsViewController+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlaySoundsViewController+Audio.swift"; sourceTree = "<group>"; };
 		E2F001C82045BB840060A52D /* PitchPerfect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PitchPerfect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2F001CB2045BB840060A52D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2F001CD2045BB840060A52D /* RecordSoundsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecordSoundsViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				E2F001D42045BB840060A52D /* LaunchScreen.storyboard */,
 				E2F001D72045BB840060A52D /* Info.plist */,
 				E2F001DD2049A4190060A52D /* PlaySoundsViewController.swift */,
+				E240AAD8205837E0000481C9 /* PlaySoundsViewController+Audio.swift */,
 			);
 			path = PitchPerfect;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2F001CE2045BB840060A52D /* RecordSoundsViewController.swift in Sources */,
+				E240AAD9205837E0000481C9 /* PlaySoundsViewController+Audio.swift in Sources */,
 				E2F001DE2049A4190060A52D /* PlaySoundsViewController.swift in Sources */,
 				E2F001CC2045BB840060A52D /* AppDelegate.swift in Sources */,
 			);

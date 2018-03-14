@@ -7,19 +7,67 @@
 //
 
 import UIKit
+import AVFoundation
 
-class PlaySoundsViewController: UITableViewController {
-
+class PlaySoundsViewController: UIViewController {
+    
+    @IBOutlet weak var snailButton: UIButton!
+    @IBOutlet weak var chipmunkButton: UIButton!
+    @IBOutlet weak var rabbitButton: UIButton!
+    @IBOutlet weak var vaderButton: UIButton!
+    @IBOutlet weak var echoButton: UIButton!
+    @IBOutlet weak var reverbButton: UIButton!
+    @IBOutlet weak var stopButton: UIButton!
+    
     var recordedAudioURL : URL!
+   
+    var audioFile:AVAudioFile!
+    var audioEngine:AVAudioEngine!
+    var audioPlayerNode: AVAudioPlayerNode!
+    var stopTimer: Timer!
+    
+    enum ButtonType: Int {
+        case slow = 0, fast, chipmunk, vader, echo, reverb
+    }
+    
+    @IBAction func playSoundForButton(_ sender: UIButton) {
+        
+            switch(ButtonType(rawValue: sender.tag)!) {
+            case .slow:
+                playSound(rate: 0.5)
+            case .fast:
+                playSound(rate: 1.5)
+            case .chipmunk:
+                playSound(pitch: 1000)
+            case .vader:
+                playSound(pitch: -1000)
+            case .echo:
+                playSound(echo: true)
+            case .reverb:
+                playSound(reverb: true)
+            }
+            
+            configureUI(.playing)
+           }
+    
+    @IBAction func stopButtonPressed(_ sender: AnyObject) {
+        stopAudio()
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupAudio()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        configureUI(.notPlaying)
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,16 +77,9 @@ class PlaySoundsViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+    
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-
+   
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
